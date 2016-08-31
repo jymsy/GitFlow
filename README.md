@@ -19,7 +19,7 @@ Description
 
 ![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/master/2.png)
 
-本地打开命令行，执行
+本地打开命令行，执行（首先要在github添加ssh-key，参考[Generating a new SSH key](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)）
 ```sh
 $ git clone git@github.com:jymsy/Mango.git
 ```

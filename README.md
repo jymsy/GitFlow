@@ -26,7 +26,7 @@ $ git clone git@github.com:jymsy/Mango.git
 
 克隆完成后已经把代码下载到本地， 执行
 ```sh
-$ git remote -v`
+$ git remote -v
 ```
 
 可以看到origin已经被添加进来
@@ -37,13 +37,12 @@ origin  git@github.com:jymsy/Mango.git (push)
 
 ```
 
-我们还需要添加一个名为upstream的远端仓库，每次创建新分支的时候要基于这个远端仓库。这个远端仓库的地址
-就是被你fork的那个仓库的地址。
+我们还需要添加一个名为upstream的远端仓库，每次创建新分支的时候要基于这个远端仓库。这个远端仓库的地址就是被你fork的那个仓库的地址。
 ```sh
 $ git remote add upstream git@github.com:sugareps/Mango.git
 ```
 
-添加完成之后再次执行 git remote -v
+添加完成之后再次执行 `git remote -v`
 ```sh
 ➜  Mango/ git:(ibmd_100841) git remote -v
 origin    git@github.com:jymsy/Mango.git (fetch)
@@ -56,7 +55,7 @@ upstream    git@github.com:sugareps/Mango.git (push)
 
 编写代码 提交
 -----
-比如说我现在要做个UT的task，现在本地创建一个新分支，这个分支要基于upstream。
+比如说我现在要做个UT的task，先在本地创建一个新分支，这个分支要基于upstream。
 先执行
 ```sh
 $ git fetch upstream

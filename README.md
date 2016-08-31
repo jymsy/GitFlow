@@ -15,7 +15,7 @@ Description
 详细工作流
 -----
 
-当在github上fork之后复制git@github.com:jymsy/Mango.git
+当在github上fork之后复制`git@github.com:jymsy/Mango.git`
 
 ![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/master/2.png)
 

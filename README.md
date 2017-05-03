@@ -1,91 +1,80 @@
 GitFlow
 =======
 
-Description
+安装
 -----------
 
-![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/master/1.png)
+[下载git](https://git-scm.com/downloads)
 
-其中jymsy / Mango 是我们fork到自己账户下的仓库，sugareps/Mango是远程的主仓库。我们提交的所有代码都
-向我们自己账户下的仓库提交，然后再通过提pull request的方式merge到远程主仓库。
+配置
+-----------
+配置的是你个人的用户名称和电子邮件地址。这两条配置很重要，每次 Git 提交时都会引用这两条信息，说明是谁提交了更新，所以会随更新内容一起被永久纳入历史记录：
 
-
-
-
-详细工作流
------
-
-当在github上fork之后复制`git@github.com:jymsy/Mango.git`
-
-![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/master/2.png)
-
-本地打开命令行，执行（首先要在github添加ssh-key，参考[Generating a new SSH key](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)）
 ```sh
-$ git clone git@github.com:jymsy/Mango.git
+$ git config --global user.name "蒋羽萌"
+$ git config --global user.email jiangyumeng@izaodao.com
 ```
 
-克隆完成后已经把代码下载到本地， 执行
-```sh
-$ git remote -v
-```
+生成SSH密钥
 
-可以看到origin已经被添加进来
 ```sh
-➜  Mango/ git:(ibmd_100841) git remote -v
-origin    git@github.com:jymsy/Mango.git (fetch)
-origin  git@github.com:jymsy/Mango.git (push)
-
+ssh-keygen -t rsa -C "jiangyumeng@izaodao.org"
 ```
+一路回车
 
-我们还需要添加一个名为upstream的远端仓库，每次创建新分支的时候要基于这个远端仓库。这个远端仓库的地址就是被你fork的那个仓库的地址。
+查看SSH密钥
+Windows Command Line:
 ```sh
-$ git remote add upstream git@github.com:sugareps/Mango.git
+type %userprofile%\.ssh\id_rsa.pub
 ```
-
-添加完成之后再次执行 `git remote -v`
+GNU/Linux/Mac/PowerShell:
 ```sh
-➜  Mango/ git:(ibmd_100841) git remote -v
-origin    git@github.com:jymsy/Mango.git (fetch)
-origin  git@github.com:jymsy/Mango.git (push)
-upstream    git@github.com:sugareps/Mango.git (fetch)
-upstream    git@github.com:sugareps/Mango.git (push)
+cat ~/.ssh/id_rsa.pub
 ```
-已经添加上了upstream。
+密钥大概长这样
+
+![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/zaodao/2.jpg)
+
+将密钥全部复制，包括最后的邮箱，后面会用到.
 
 
-编写代码 提交
------
-比如说我现在要做个UT的task，先在本地创建一个新分支，这个分支要基于upstream。
-先执行
-```sh
-$ git fetch upstream
-```
-从远端仓库下载新分支与数据，然后创建分支
-```sh
-$ git checkout -b ibmt_xxx upstream/SC3.6
-```
-`ibmt_xxx`就是新的分支名，`upstream/SC3.6`表示基于upstream的SC3.6分支（这个分支要存在），创建完成后
-执行`git branch`
-```sh
-$ git branch
-  ibmd_100698
-* ibmt_xxx
+设置gitlab
+-----------
+[进入gitlab](http://192.168.1.196:10080)
 
-```
-可以看到刚刚创建的分支，执行`git status`
-```sh
-$ git status
-位于分支 ibmt_xxx
-您的分支与上游分支 'upstream/SC3.6' 一致。
-nothing to commit, working tree clean
-```
-上游分支为`upstream/SC3.6`
+点击左下角头像进入个人资料
 
-修改完代码之后，执行
+![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/zaodao/1.png)
+
+点击左侧个人资料设置
+
+![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/zaodao/2.png)
+
+设置姓名和邮箱
+
+![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/zaodao/3.png)
+
+点击SSH密钥
+
+![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/zaodao/1.jpg)
+
+将之前复制的密钥粘到公钥输入框中，标题随便写，点击增加密钥
+
+添加成功后可以在下面看到添加好的密钥
+
+![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/zaodao/3.jpg)
+
+拉取代码
+-----------
+进入项目的主页，根据箭头所指，选择ssh，然后点击复制按钮
+
+![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/zaodao/4.jpg)
+
+通过命令行进入想要存放代码的目录，然后执行:
 ```sh
-$ git add *
-$ git commit -m "xxxxxxxx"
-$ git push origin HEAD
+git clone ssh://git@192.168.1.196:10022/izaodao-PHP/test_cpss.git
 ```
-提交代码到自己的分支。然后到github上创建pull request即可。
+
+如果觉得通过命令行操作麻烦也可以使用图形界面的工具，比如[SourceTree](https://www.sourcetreeapp.com/)
+
 

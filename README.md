@@ -12,7 +12,7 @@ GitFlow
 
 ```sh
 $ git config --global user.name "蒋羽萌"
-$ git config --global user.email jiangyumeng@izaodao.com
+$ git config --global user.email jiangyumeng@izaodao.org
 ```
 
 生成SSH密钥

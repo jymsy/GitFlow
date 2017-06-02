@@ -143,6 +143,7 @@ $ git status
 说明更新完毕，**有的时候会有冲突，要先解决冲突，再提交**。
 
 3. 推送到远程
+
 与svn不同，在commit之后还需要通过push命令，将改动提交到远程仓库中别人才能够获取你的代码。
 
 ```sh
@@ -161,7 +162,13 @@ To ssh://192.168.1.196:10022/jymsy/testcpss.git
 
 传到dev环境测试
 -----------
-1. 创建merge request
+1. 创建合并请求(merge request)
 
 ![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/zaodao/9.jpg)
+
+将合并请求指派给拥有合并权限的人，然后点击`提交新的合并请求`。
+![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/zaodao/10.jpg)
+
+提交完成后等待被指派人code review后接受你的合并请求。一旦接受，代码就会合并到develop分支，并且通过CI工具自动上传到dev服务器，这时候就可以通知测试人员测试了。
+
 

@@ -160,7 +160,7 @@ To ssh://192.168.1.196:10022/jymsy/testcpss.git
 
 ![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/zaodao/8.jpg)
 
-传到dev环境测试
+发布到dev环境测试
 -----------
 创建合并请求(merge request)
 
@@ -179,7 +179,12 @@ To ssh://192.168.1.196:10022/jymsy/testcpss.git
 点击Cherry-pick，在弹出的对话框中，选择挑选到pre_master分支，不要勾选开启新的合并请求。
 ![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/zaodao/12.jpg)
 
+成功合并之后，就可以删除相关的功能分支了。
 
 
+发布到生产环境
+-----------
+创建新的合并请求，来源分支选择pre_master，目标分支选择master
+![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/zaodao/13.jpg)
 
 

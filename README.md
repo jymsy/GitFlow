@@ -100,8 +100,8 @@ git checkout -b jym-task-1803 origin/develop
 
 当完成功能的开发之后，首先通过
 ```sh
-git fetch origin
-git status
+$ git fetch origin
+$ git status
 ```
 获取远程分支的内容更新，例如:
 ```sh
@@ -142,6 +142,26 @@ $ git status
 ```
 说明更新完毕，**有的时候会有冲突，要先解决冲突，再提交**。
 
+3. 推送到远程
+与svn不同，在commit之后还需要通过push命令，将改动提交到远程仓库中别人才能够获取你的代码。
 
+```sh
+$ git push origin HEAD
+对象计数中: 5, 完成.
+Delta compression using up to 4 threads.
+压缩对象中: 100% (5/5), 完成.
+写入对象中: 100% (5/5), 439 bytes | 0 bytes/s, 完成.
+Total 5 (delta 4), reused 0 (delta 0)
+To ssh://192.168.1.196:10022/jymsy/testcpss.git
+ * [new branch]        HEAD -> jym-task-1803
+```
+推送完成之后，就可以在gitlab中看到新创建的分支
 
+![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/zaodao/8.jpg)
+
+传到dev环境测试
+-----------
+1. 创建merge request
+
+![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/zaodao/9.jpg)
 

@@ -162,7 +162,7 @@ To ssh://192.168.1.196:10022/jymsy/testcpss.git
 
 传到dev环境测试
 -----------
-1. 创建合并请求(merge request)
+创建合并请求(merge request)
 
 ![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/zaodao/9.jpg)
 
@@ -170,5 +170,13 @@ To ssh://192.168.1.196:10022/jymsy/testcpss.git
 ![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/zaodao/10.jpg)
 
 提交完成后等待被指派人code review后接受你的合并请求。一旦接受，代码就会合并到develop分支，并且通过CI工具自动上传到dev服务器，这时候就可以通知测试人员测试了。
+
+准备发布
+-----------
+当测试人员测试完成，并且确定可以将代码发布到生产环境的时候，在gitlab上找到跟此功能相关的提交
+![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/zaodao/11.jpg)
+
+
+
 
 

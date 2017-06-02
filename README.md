@@ -81,7 +81,12 @@ git clone ssh://git@192.168.1.196:10022/jymsy/testcpss.git
 开发功能
 -----------
 1. 创建分支
+
 在PMS中找到已经建好的任务
 
+![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/zaodao/5.jpg)
 
+在gitlab项目中点击“新分支”
+
+![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/zaodao/6.jpg)
 

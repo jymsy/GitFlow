@@ -72,9 +72,16 @@ cat ~/.ssh/id_rsa.pub
 
 通过命令行进入想要存放代码的目录，然后执行:
 ```sh
-git clone ssh://git@192.168.1.196:10022/izaodao-PHP/test_cpss.git
+git clone ssh://git@192.168.1.196:10022/jymsy/testcpss.git
 ```
 
 如果觉得通过命令行操作麻烦也可以使用图形界面的工具，比如[SourceTree](https://www.sourcetreeapp.com/)
+
+
+开发功能
+-----------
+1. 创建分支
+在PMS中找到已经建好的任务
+
 
 

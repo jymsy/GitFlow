@@ -86,7 +86,46 @@ git clone ssh://git@192.168.1.196:10022/jymsy/testcpss.git
 
 ![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/zaodao/5.jpg)
 
-在gitlab项目中点击“新分支”
+在本地的代码目录中，执行创建分支的命令：
+```sh
+git checkout -b jym-task-1803 origin/develop
+```
+`jym-task-1803`是新创建的分支名。规则如下：
 
-![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/zaodao/6.jpg)
+名字首字母缩写-task/bug-task/bug id
+
+`origin/develop`表示基于远程仓库的develop分支创建，**所有新分支都要基于develop分支建立**。
+
+2. 提交修改
+
+当完成功能的开发之后，首先通过
+```sh
+git fetch origin
+git status
+```
+获取远程分支的内容更新，例如:
+```sh
+$ git status
+位于分支 jym-task-1803
+您的分支落后 'origin/develop' 共 1 个提交，并且可以快进。
+  （使用 "git pull" 来更新您的本地分支）
+无文件要提交，干净的工作区
+```
+说明远程分支有更新，需要执行`git rebase`更新本地分支：
+```sh
+$ git rebase
+首先，回退分支以便在上面重放您的工作...
+快进 jym-task-1803 至 refs/remotes/origin/develop。
+```
+再次执行`git status`
+```sh
+$ git status
+位于分支 jym-task-1803
+您的分支与上游分支 'origin/develop' 一致。
+无文件要提交，干净的工作区
+```
+说明更新完毕，**有的时候会有冲突，要先解决冲突，再提交**。
+
+
+
 

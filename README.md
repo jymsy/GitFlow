@@ -180,7 +180,11 @@ To ssh://192.168.1.196:10022/jymsy/testcpss.git
 ![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/zaodao/12.jpg)
 
 成功合并之后，就可以删除相关的功能分支了。
-
+```sh
+$ git push origin :jym-task-1803
+To ssh://192.168.1.196:10022/jymsy/testcpss.git
+ - [deleted]           jym-task-1803
+```
 
 发布到生产环境
 -----------

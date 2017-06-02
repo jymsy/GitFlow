@@ -109,19 +109,35 @@ $ git status
 位于分支 jym-task-1803
 您的分支落后 'origin/develop' 共 1 个提交，并且可以快进。
   （使用 "git pull" 来更新您的本地分支）
-无文件要提交，干净的工作区
+尚未暂存以备提交的变更：
+  （使用 "git add <文件>..." 更新要提交的内容）
+  （使用 "git checkout -- <文件>..." 丢弃工作区的改动）
+
+	修改：     application/config/options.php
+
+修改尚未加入提交（使用 "git add" 和/或 "git commit -a"）
 ```
-说明远程分支有更新，需要执行`git rebase`更新本地分支：
+说明远程分支有更新，我们先将改动的文件提交
+```sh
+$ git add *
+$ git commit -m "功能1"
+[jym-task-1803 e271c066] 功能1
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+```
+
+再执行`git rebase`更新本地分支：
 ```sh
 $ git rebase
 首先，回退分支以便在上面重放您的工作...
-快进 jym-task-1803 至 refs/remotes/origin/develop。
+应用：功能1
 ```
 再次执行`git status`
 ```sh
 $ git status
 位于分支 jym-task-1803
-您的分支与上游分支 'origin/develop' 一致。
+您的分支领先 'origin/develop' 共 1 个提交。
+  （使用 "git push" 来发布您的本地提交）
 无文件要提交，干净的工作区
 ```
 说明更新完毕，**有的时候会有冲突，要先解决冲突，再提交**。

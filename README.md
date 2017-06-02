@@ -176,6 +176,9 @@ To ssh://192.168.1.196:10022/jymsy/testcpss.git
 当测试人员测试完成，并且确定可以将代码发布到生产环境的时候，在gitlab上找到跟此功能相关的提交
 ![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/zaodao/11.jpg)
 
+点击Cherry-pick，在弹出的对话框中，选择挑选到pre_master分支，不要勾选开启新的合并请求。
+![本地仓库](https://raw.githubusercontent.com/jymsy/GitFlow/zaodao/12.jpg)
+
 
 
 

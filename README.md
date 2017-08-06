@@ -15,6 +15,15 @@ $ git config --global user.name "蒋羽萌"
 $ git config --global user.email jiangyumeng@izaodao.org
 ```
 
+配置换行符
+
+```sh
+#提交检出均不转换
+git config --global core.autocrlf false
+#拒绝提交包含混合换行符的文件
+git config --global core.safecrlf true
+```
+
 生成SSH密钥
 
 ```sh

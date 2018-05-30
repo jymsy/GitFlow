@@ -45,3 +45,13 @@ $ ssh -T git@192.168.1.196
 ```sh
 在对应的github和gitlab上settings里面配置SSH keys （指定的.pub密钥）
 ```
+
+细节
+
+由于git全局我配置的是github的用户名和邮箱，所以在git clone了gitlab仓库后，初次需要在仓库根目录下进行下用户名和邮箱配置。
+不然提交上的记录显示的会是github的账户信息。
+相关命令如下
+```sh
+$ git config user.name "[name]"
+$ git config user.email "[email address]"
+```

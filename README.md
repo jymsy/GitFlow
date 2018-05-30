@@ -2,7 +2,6 @@ GitLab GitHub 共存
 =======
 
 生成密钥
------------
 
 ```sh
 $ ssh-keygen -t rsa -C "注册的gitlab邮箱"  //默认设置
